@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+  <!--  below pointB and pointC are very specific to trangle bean so can be kept inside as 
+   as no other bean going to use it.  id property is used for referenceing other bean. -->
+   
+ <!--   name="triangle-name"  is not a better way to create aliases
+   <alias name="triangle" alias="triangle_alias"/>  is better way -->
+   
+  <!--  ref can point to id or name attribute in a bean -->
+   
+
+	<bean id="triangle"
+		class="com.test.springxml.innerbean.Triangle"  name="triangle-name">
+		<property name="pointA" ref="point0" />
+		<property name="pointB">
+			<bean id="point1"
+				class="com.test.springxml.innerbean.Point">
+				<property name="x" value="-20" />
+				<property name="y" value="0" />
+			</bean>
+		</property>
+		<property name="pointC">
+			<bean id="point2"
+				class="com.test.springxml.innerbean.Point">
+				<property name="x" value="20" />
+				<property name="y" value="0" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="point0"
+		class="com.test.springxml.innerbean.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<alias name="triangle" alias="triangle_alias"/>
+
+</beans>   
