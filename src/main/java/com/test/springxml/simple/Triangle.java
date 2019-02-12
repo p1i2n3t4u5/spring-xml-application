@@ -1,4 +1,4 @@
-package com.test.springxml;
+package com.test.springxml.simple;
 
 public class Triangle {
 

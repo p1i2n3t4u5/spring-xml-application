@@ -1,4 +1,4 @@
-package com.test.springxml.trianglewithpoint;
+package com.test.springxml.lifecycle;
 
 public class Point {
 

@@ -15,32 +15,41 @@
    <alias name="triangle" alias="triangle_alias"/>  is better way -->
    
   <!--  ref can point to id or name attribute in a bean -->
-   
+  
+  <!-- idref  can only be used with string property . if corresponding bean exists 
+  it will put its name in the mentioned property of type String -->
+   <bean id="point11" name="point12"
+		class="com.test.springxml.idref.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
 
 	<bean id="triangle"
-		class="com.test.springxml.innerbean.Triangle"  name="triangle-name">
-		<property name="pointA" ref="point0" />
+		class="com.test.springxml.idref.Triangle"  name="triangle-name">
+		<property name="pointA" >
+		   <ref bean="point12"/>
+		</property>
+		<property name="name" >
+		   <idref bean="point12"/>
+		</property> 
+		
 		<property name="pointB">
 			<bean id="point1"
-				class="com.test.springxml.innerbean.Point">
+				class="com.test.springxml.idref.Point">
 				<property name="x" value="-20" />
 				<property name="y" value="0" />
 			</bean>
 		</property>
 		<property name="pointC">
 			<bean id="point2"
-				class="com.test.springxml.innerbean.Point">
+				class="com.test.springxml.idref.Point">
 				<property name="x" value="20" />
 				<property name="y" value="0" />
 			</bean>
 		</property>
 	</bean>
 
-	<bean id="point11"  name="point0"
-		class="com.test.springxml.innerbean.Point">
-		<property name="x" value="0" />
-		<property name="y" value="0" />
-	</bean>
+	
 	
 	<alias name="triangle" alias="triangle_alias"/>
 

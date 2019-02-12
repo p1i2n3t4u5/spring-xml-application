@@ -22,8 +22,8 @@ public class Triangle {
 		public void setPointC(Point pointC) {
 			this.pointC = pointC;
 		}
-		@Override
-		public String toString() {
-			return "Point [pointA=" + pointA + ", pointB=" + pointB + ", pointC=" + pointC + "]";
-		}
+//		@Override
+//		public String toString() {
+//			return "Point [pointA=" + pointA + ", pointB=" + pointB + ", pointC=" + pointC + "]";
+//		}
 }

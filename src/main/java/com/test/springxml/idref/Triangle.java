@@ -1,9 +1,10 @@
-package com.test.springxml.trianglewithpoint;
+package com.test.springxml.idref;
 
 public class Triangle {
 	 private Point pointA;
 	    private Point pointB;
 	    private Point pointC;
+	    private String name;
 		public Point getPointA() {
 			return pointA;
 		}
@@ -22,8 +23,17 @@ public class Triangle {
 		public void setPointC(Point pointC) {
 			this.pointC = pointC;
 		}
-//		@Override
-//		public String toString() {
-//			return "Point [pointA=" + pointA + ", pointB=" + pointB + ", pointC=" + pointC + "]";
-//		}
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		@Override
+		public String toString() {
+			return "Triangle [pointA=" + pointA + ", pointB=" + pointB + ", pointC=" + pointC + ", name=" + name + "]";
+		}
+		
+		
+		
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="parenttriangle"
+		class="com.test.springxml.beandefination.inheritance.Triangle">
+		<property name="pointA" ref="point0"/>
+
+	</bean>
+	
+	<bean id="triangle1"
+		class="com.test.springxml.beandefination.inheritance.Triangle" parent="parenttriangle">
+		<property name="pointB" ref="point1"/>
+		<property name="pointC" ref="point2"/>
+	</bean>
+	
+	<bean id="triangle2"
+		class="com.test.springxml.beandefination.inheritance.Triangle" parent="parenttriangle">
+		<property name="pointB" ref="point1"/>
+	</bean>
+
+	<bean id="point0"
+		class="com.test.springxml.beandefination.inheritance.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+
+	<bean id="point1"
+		class="com.test.springxml.beandefination.inheritance.Point">
+		<property name="x" value="-20" />
+		<property name="y" value="0" />
+	</bean>
+
+	<bean id="point2"
+		class="com.test.springxml.beandefination.inheritance.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean>
+
+</beans>   

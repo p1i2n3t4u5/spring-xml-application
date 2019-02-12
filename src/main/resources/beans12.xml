@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd"
+	default-init-method="myInit" default-destroy-method="myDestroy">
+
+	<!-- abstract="true" property does not create any bean for parent -->
+	<!-- merge="true" property merges the collection otherwise it will overwrite -->
+	
+<!-- 	default-init-method="myInit" default-destroy-method="myDestroy"  is applied at context level -->
+
+	<bean id="triangle"
+		class="com.test.springxml.lifecyclexml.Triangle" init-method="myInit"
+		destroy-method="myDestroy">
+		<property name="pointA" ref="point0" />
+		<property name="pointB" ref="point1" />
+		<property name="pointC" ref="point2" />
+	</bean>
+
+
+	<bean id="point0" class="com.test.springxml.lifecyclexml.Point">
+		<property name="x" value="0" />
+		<property name="y" value="0" />
+	</bean>
+
+	<bean id="point1" class="com.test.springxml.lifecyclexml.Point">
+		<property name="x" value="-20" />
+		<property name="y" value="0" />
+	</bean>
+
+	<bean id="point2" class="com.test.springxml.lifecyclexml.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+	</bean>
+
+</beans>   

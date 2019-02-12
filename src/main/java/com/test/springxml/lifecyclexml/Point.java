@@ -1,4 +1,4 @@
-package com.test.springxml.trianglewithpoint;
+package com.test.springxml.lifecyclexml;
 
 public class Point {
 
@@ -19,6 +19,16 @@ public class Point {
 
 	public void setY(int y) {
 		this.y = y;
+	}
+	
+	public void myInit() {
+		System.out.println("myInit()   method of Point is called");
+
+	}
+
+	public void myDestroy() {
+		System.out.println("myDestroy() method of Point is called");
+
 	}
 
 //	@Override
