@@ -1,6 +1,6 @@
-package com.test.springxml.idref;
+package com.test.springxml.autowireinterface;
 
-public class Triangle {
+public class Triangle implements Shape {
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
@@ -41,6 +41,13 @@ public class Triangle {
 	@Override
 	public String toString() {
 		return "Triangle [pointA=" + pointA + ", pointB=" + pointB + ", pointC=" + pointC + ", name=" + name + "]";
+	}
+
+	@Override
+	public void draw() {
+		System.out.println("Drawing Triangle [pointA=" + pointA + ", pointB=" + pointB + ", pointC=" + pointC
+				+ ", name=" + name + "]");
+
 	}
 
 }
