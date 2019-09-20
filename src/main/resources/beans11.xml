@@ -10,7 +10,7 @@
 	<!-- abstract="true" property does not create any bean for parent -->
 	<!-- merge="true" property merges the collection otherwise it will overwrite -->
 
- <bean id="triangle" class="com.test.springxml.lifecycle.Triangle" >
+ <bean id="triangle" class="com.test.springxml.lifecycle.Triangle"   init-method="myInit" destroy-method="myDestroy">
          <property name="pointA" ref="point0"/>
          <property name="pointB" ref="point1"/>
          <property name="pointC" ref="point2"/>
